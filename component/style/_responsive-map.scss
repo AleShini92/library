@@ -1,0 +1,69 @@
+// Predefined Break-points
+$mediaMaxWidth: 1024px;
+$mediaBp1Width: 960px;
+$mediaBp2Width: 768px; // added for .works section
+$mediaBp3Width: 435px; // added footer
+$mediaMinWidth: 50px;
+
+@function translate-media-condition($c) {
+  $condMap: (
+		"screen": "only screen",
+		"print": "only print",
+		"retina": "(-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-device-pixel-ratio: 1.5), (min-resolution: 120dpi)",
+    ">maxWidth": "(min-width: #{$mediaMaxWidth + 1})",
+		"<maxWidth": "(max-width: #{$mediaMaxWidth})",
+		">bp1Width": "(min-width: #{$mediaBp1Width + 1})",
+		"<bp1Width": "(max-width: #{$mediaBp1Width})",
+    ">bp2Width": "(min-width: #{$mediaBp2Width + 1})",
+    "<bp2Width": "(max-width: #{$mediaBp2Width})",
+    ">bp3Width": "(min-width: #{$mediaBp3Width + 1})",
+    "<bp3Width": "(max-width: #{$mediaBp3Width})",
+		">minWidth": "(min-width: #{$mediaMinWidth})",
+		"<minWidth": "(max-width: #{$mediaMinWidth})"
+	);
+  @return map-get( $condMap, $c );
+}
+
+// The media mixin
+@mixin media($args...) {
+  $query: "";
+  @each $arg in $args {
+    $op: "";
+    @if ( $query != "" ) {
+      $op: " and ";
+    }
+    $query: $query + $op + translate-media-condition($arg);
+  }
+  @media #{$query}  { @content; }
+}
+
+/*
+*
+* example media
+*
+*/
+
+// nameTag / .class / #id {
+
+//     @include media( "retina" ){
+
+//     };
+//     @include media( "screen", ">bp1Width", "<maxWidth" ){
+
+//     };
+//       @include media( "screen", ">minWidth", "<bp1Width" ){
+
+//     };
+
+//   @include media( "screen", ">minWidth", "<bp2Width" ){
+
+// };
+
+//   @include media( "screen", ">minWidth", "<bp3Width" ){
+
+// };
+
+//       @include media( "screen", "<minWidth" ){
+
+//     };
+// }

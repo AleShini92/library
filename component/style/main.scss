@@ -1,0 +1,43 @@
+@use 'color' as c;
+
+.container__cards {
+    justify-content: center;
+    flex-direction: column;
+    
+    .container__card {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        figure {
+            height: 220px;
+            margin: 0 auto;
+            overflow: hidden;
+            width: 150px;
+        }
+
+        figcaption {
+            text-align: center;
+        }
+
+        .card__img {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            height: 310px;
+            justify-content: space-between;
+            width: 210px;
+        }
+
+        .card {
+            cursor: pointer;
+            &:hover {
+                background: c.$bg-card;
+            }
+        }
+
+        .card:not(:hover) {
+            background: c.$bg-hover;
+        }
+    }
+}
