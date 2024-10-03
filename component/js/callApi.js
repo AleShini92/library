@@ -1,5 +1,5 @@
 import axios from "axios";
-
+import { showBookModal } from './description';
 /***
  *
  * @async
@@ -17,10 +17,10 @@ const getBooks = async function(genre) {
         );
         const books = res.data.works;
         console.log(books);
-        
         if (books.length !== 0) {
             const searchGenreTitle = `${genre[0].toUpperCase()}${genre.slice(1)}`;
             document.querySelector('#resultTitle').innerText = `Books in the "${searchGenreTitle}" genre:`;
+            
             // Clear previous results
             const bookList = document.querySelector('#bookList');
             bookList.innerHTML = '';
@@ -28,7 +28,7 @@ const getBooks = async function(genre) {
             // Populate the book list
             books.forEach(book => {
                 const card = `
-                    <div class="card bg-card b-radius_1">
+                    <div class="card bg-card b-radius_1" data-book-id="${book.key}">
                         <div class="card__img m-auto p-2">
                             <figure>
                                 <img class="obj-fit w-100" src="https://covers.openlibrary.org/b/id/${book.cover_id}.jpg" title="${book.title}" alt="${book.title}"/>
@@ -36,8 +36,19 @@ const getBooks = async function(genre) {
                             <figcaption><strong class="text-color">${book.title}</strong></figcaption>
                         </div>
                     </div>
-                `
+                `;
                 bookList.insertAdjacentHTML('beforeend', card);
+            });
+
+            // Add click event listener to each card
+            document.querySelectorAll('.card').forEach(card => {
+                card.addEventListener('click', function() {
+                    const bookId = this.getAttribute('data-book-id');
+                    const selectedBook = books.find(book => book.key === bookId);
+                    if (selectedBook) {
+                        showBookModal(selectedBook);
+                    }
+                });
             });
         } else {
             document.querySelector('#resultTitle').innerText = 'No books found.';
@@ -47,6 +58,7 @@ const getBooks = async function(genre) {
         document.querySelector('#resultTitle').innerText = 'Error fetching books.';
     }
 };
+
 
 /***
  * @param { searchBtn }
