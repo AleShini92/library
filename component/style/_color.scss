@@ -4,22 +4,18 @@ $black:          hsl(0, 0%, 0%);
 $bg-card:        hsl(0, 0%, 84%);
 $bg-hover:       hsl(0, 0%, 96%);
 $primary:        hsl(214, 23%, 56%);
-$primary-hover:  hsl(214, 23%, 80%);
+$primary-hover:  hsl(214, 23%, 80%);           
+$text:           hsl(214, 23%, 56%);           
 $white:          hsl(0, 0%, 100%);
-
-$blue-ligh:     hsl(212, 100%, 76%);
-$magent-light:  hsl(301, 87%, 82%);
 
 
 // scss-docs-start colors-map
 $colors: (
-  "primary":      $primary,
-  "black":        $black,
-  "card":         $bg-card,
-  "card:hover":   $bg-card,
-  "white":        $white,
-  "blue":         $blue-ligh,
-  "magent":       $magent-light,
+  "black":          $black,
+  "primary":        $primary,
+  "primary-hover":  $primary-hover,
+  "color":           $text,
+  "white":          $white,
 ) !default;
 
 //color txt, bg, btn-border

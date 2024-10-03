@@ -32,12 +32,16 @@
         .card {
             cursor: pointer;
             &:hover {
-                background: c.$bg-card;
+                background: c.$primary;
+
+                strong {
+                    color: white;
+                }
             }
         }
 
         .card:not(:hover) {
-            background: c.$bg-hover;
+            background: c.$primary-hover;
         }
     }
 }

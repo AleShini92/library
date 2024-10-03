@@ -20,9 +20,9 @@ const getBooks = async function(genre) {
         
         if (books.length !== 0) {
             const searchGenreTitle = `${genre[0].toUpperCase()}${genre.slice(1)}`;
-            document.getElementById('resultTitle').innerText = `Books in the "${searchGenreTitle}" genre:`;
+            document.querySelector('#resultTitle').innerText = `Books in the "${searchGenreTitle}" genre:`;
             // Clear previous results
-            const bookList = document.getElementById('bookList');
+            const bookList = document.querySelector('#bookList');
             bookList.innerHTML = '';
 
             // Populate the book list
@@ -33,29 +33,32 @@ const getBooks = async function(genre) {
                             <figure>
                                 <img class="obj-fit w-100" src="https://covers.openlibrary.org/b/id/${book.cover_id}.jpg" title="${book.title}" alt="${book.title}"/>
                             </figure>
-                            <figcaption><strong>${book.title}</strong></figcaption>
+                            <figcaption><strong class="text-color">${book.title}</strong></figcaption>
                         </div>
                     </div>
                 `
                 bookList.insertAdjacentHTML('beforeend', card);
             });
         } else {
-            document.getElementById('resultTitle').innerText = 'No books found.';
+            document.querySelector('#resultTitle').innerText = 'No books found.';
         }
     } catch (e) {
         console.log(e.message);
-        document.getElementById('resultTitle').innerText = 'Error fetching books.';
+        document.querySelector('#resultTitle').innerText = 'Error fetching books.';
     }
 };
 
-// Event listener for the button
-document.getElementById('searchBtn').addEventListener('click', function() {
-    const genre = document.getElementById('genre').value.toLowerCase();
+/***
+ * @param { searchBtn }
+ * @param { genre }
+*/
+document.querySelector('#searchBtn').addEventListener('click', function() {
+    const genre = document.querySelector('#genre').value.toLowerCase();
     if (genre) {
         getBooks(genre);
     }
     else {
-        document.getElementById('resultTitle').innerText = 'genre not found!!';
+        document.querySelector('#resultTitle').innerText = 'genre not found!!';
     }
 });
   
