@@ -43,11 +43,8 @@ const getBooks = async function(genre) {
             // Add click event listener to each card
             document.querySelectorAll('.card').forEach(card => {
                 card.addEventListener('click', function() {
-                    const bookId = this.getAttribute('data-book-id');
-                    const selectedBook = books.find(book => book.key === bookId);
-                    if (selectedBook) {
-                        showBookModal(selectedBook);
-                    }
+                    const bookKey = this.getAttribute('data-book-id');  // Retrieve book key from data attribute
+                    showBookModal(bookKey);  // Pass the key to the modal function
                 });
             });
         } else {
@@ -58,6 +55,7 @@ const getBooks = async function(genre) {
         document.querySelector('#resultTitle').innerText = 'Error fetching books.';
     }
 };
+
 
 
 /***

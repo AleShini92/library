@@ -1,10 +1,10 @@
 let genre = [
-    'Architecture', 'dance', 'design', 'Fashion', 'Film', 'Music', 'Painting', 'Photography', 'Bears', 'Cats', 'Kittens',
-    'Dogs', 'Puppies', 'Fantasy', 'Horror', 'Humor', 'Literature', 'Magic', 'Plays', 'Poetry', 'Romance', 'Thriller', 'Biology',
-    'Chemistry', 'Mathematics', 'Phisics', 'Programming', 'Management', 'Entrepreneurship', 'Finance', 'Archeology', 'Anthropology',
-    'Cooking', 'Cookbooks', 'Exercise', 'Nutrition', 'Autobiography', 'History', 'Women', 'Composers', 'Artists', 'Psychology',
-    'Geography', 'Algebra', 'Education', 'Science', 'Phsycs', 'English', 'French', 'Spanish', 'German', 'Russian', 'Italian',
-    'Chinese', 'Japanese',
+  'Architecture', 'dance', 'design', 'Fashion', 'Film', 'Music', 'Painting', 'Photography', 'Bears', 'Cats', 'Kittens',
+  'Dogs', 'Puppies', 'Fantasy', 'Horror', 'Humor', 'Literature', 'Magic', 'Plays', 'Poetry', 'Romance', 'Thriller', 'Biology',
+  'Chemistry', 'Mathematics', 'Phisics', 'Programming', 'Management', 'Entrepreneurship', 'Finance', 'Archeology', 'Anthropology',
+  'Cooking', 'Cookbooks', 'Exercise', 'Nutrition', 'Autobiography', 'History', 'Women', 'Composers', 'Artists', 'Psychology',
+  'Geography', 'Algebra', 'Education', 'Science', 'Phsycs', 'English', 'French', 'Spanish', 'German', 'Russian', 'Italian',
+  'Chinese', 'Japanese',
 ];
 
 

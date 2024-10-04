@@ -1,0 +1,37 @@
+.modal {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+}
+
+.modal-content {
+    align-content: center;
+    background: white;
+    border-radius: 30px;
+    flex-direction: column;
+    left: 50%;
+    padding: 30px;
+    position: relative;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    top: 50%;
+    width: 50%;
+    box-shadow: 0 0 15px 6px hsl(215, 23%, 56%);
+    background: hsl(215, 23%, 56%);
+    color: white;
+
+    h2 {
+        margin-bottom: 10px;
+    }
+
+    span.close-button {
+        cursor: pointer;
+        position: absolute;
+        text-align: end;
+        font-size: 26px;
+        right: 25px;
+        top: 10px;
+    }
+}

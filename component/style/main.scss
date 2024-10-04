@@ -1,5 +1,9 @@
 @use 'color' as c;
 
+main {
+    position: relative;
+}
+
 .container__cards {
     justify-content: center;
     flex-direction: column;
@@ -45,3 +49,11 @@
         }
     }
 }
+
+.filter {
+    filter: blur(4px);
+}
+
+.filter__none {
+    filter: blur(0);
+} 
