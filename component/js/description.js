@@ -15,13 +15,13 @@ export const showBookModal = async function(bookKey) {
         modal.id = 'bookModal';
         modal.className = 'modal';
         modal.innerHTML = `
-        <div class="modal-content">
-        <span class="close-button">&times;</span>
+        <div class='modal-content'>
+        <span class='close-button'>&times;</span>
         <h2>${bookDetails.title}</h2>
         <p>${bookDetails.description ? (bookDetails.description.value || bookDetails.description) : 'No description available.'}</p>
         </div>
         `;
-        // <img src="https://covers.openlibrary.org/b/id/${bookDetails.covers ? bookDetails.covers[0] : 'placeholder'}-M.jpg" alt="${bookDetails.title}">
+        // <img src='https://covers.openlibrary.org/b/id/${bookDetails.covers ? bookDetails.covers[0] : 'placeholder'}-M.jpg' alt='${bookDetails.title}'>
 
         // Append the modal to the body
         document.querySelector('main').appendChild(modal);

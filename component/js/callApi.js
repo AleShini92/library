@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 import { showBookModal } from './description';
 /***
  *
@@ -19,7 +19,7 @@ const getBooks = async function(genre) {
         console.log(books);
         if (books.length !== 0) {
             const searchGenreTitle = `${genre[0].toUpperCase()}${genre.slice(1)}`;
-            document.querySelector('#resultTitle').innerText = `Books in the "${searchGenreTitle}" genre:`;
+            document.querySelector('#resultTitle').innerText = `Books in the '${searchGenreTitle}' genre:`;
             
             // Clear previous results
             const bookList = document.querySelector('#bookList');
@@ -28,12 +28,12 @@ const getBooks = async function(genre) {
             // Populate the book list
             books.forEach(book => {
                 const card = `
-                    <div class="card bg-card b-radius_1" data-book-id="${book.key}">
-                        <div class="card__img m-auto p-2">
+                    <div class='card bg-card b-radius_1' data-book-id='${book.key}'>
+                        <div class='card__img m-auto p-2'>
                             <figure>
-                                <img class="obj-fit w-100" src="https://covers.openlibrary.org/b/id/${book.cover_id}.jpg" title="${book.title}" alt="${book.title}"/>
+                                <img class='obj-fit w-100' src='https://covers.openlibrary.org/b/id/${book.cover_id}.jpg' title='${book.title}' alt='${book.title}'/>
                             </figure>
-                            <figcaption><strong class="text-color">${book.title}</strong></figcaption>
+                            <figcaption><strong class='text-color'>${book.title}</strong></figcaption>
                         </div>
                     </div>
                 `;
@@ -56,6 +56,20 @@ const getBooks = async function(genre) {
     }
 };
 
+
+const genreInput = document.querySelector('#genre');
+const listBook = document.querySelector('.list__book');
+
+// Add event 'keydown' for 'Enter'
+genreInput.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        const genre = genreInput.value.trim();  // Prende il valore dell'input e rimuove gli spazi vuoti
+        if (genre) {
+            getBooks(genre);  // Avvia la funzione getBooks con il genere inserito
+            listBook.innerHTML = ''
+        }
+    }
+});
 
 
 /***

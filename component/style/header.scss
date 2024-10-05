@@ -50,18 +50,31 @@
     justify-content: center;
 
     .list__book {
-        width: 900px;
+        align-items: center;
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
+        flex-wrap: nowrap;
         gap: 20px;
-        justify-content: center;
+        height: 250px;
+        overflow: auto;
+        width: 530px;
+
+        .sticky {
+            cursor: default;
+            position: sticky;
+            top: 0;
+            width: 100%;
+        }
 
         span {
+            //background: $primary-hover;
+            border-radius: .5rem;
             color: $white;
             cursor: pointer;
-            background: $primary-hover;
+            display: block;
             padding: .6rem;
-            border-radius: .5rem;
+            text-align: center;
+            width: 250px;
 
             &:hover {
                 background: $primary;
