@@ -80,3 +80,27 @@ html {
 .t-center {
   text-align: center;
 }
+
+
+// menu
+
+body {
+  height: 1500px;
+}
+
+$position: (
+  "fixed": fixed,
+  "stycky": stycky,
+  "absolute": absolute,
+  "relative": relative,
+);
+
+@each $key, $val in $position {
+  .#{$key} {
+    position: $val;
+  }
+}
+
+nav {
+  z-index: 9;
+}

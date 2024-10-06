@@ -6,7 +6,7 @@
     <title>library</title>
 </head>
 <body>
-    <nav>
+    <nav class="fixed w-100">
         <figure class="w-20 p-3">
             <!-- logo library -->
              <a href="index.html" class="pointer">
@@ -27,7 +27,7 @@
     </nav>
     <!-- search bar -->
     <header>
-        <div class="container__search d-flex w-60 m-auto">
+        <div class="container__search d-flex w-60 m-auto relative">
             <h1>Find Books by Genre</h1>
             <div class="search">
                 <input class="poppins-bold" type="text" id="genre" placeholder="e.g. Fantasy, Horror, Music...">
@@ -45,9 +45,9 @@
                     </svg>
                 </span>
             </div>
-        </div>
-        <div class="container__list d-flex pt-3">
-            <div class="list__book"></div>
+            <div class="container__list d-flex pt-3">
+                <div class="list__book"></div>
+            </div>
         </div>
     </header>
     <!-- main section result api call library -->

@@ -1,6 +1,10 @@
 .container__search {
     align-items: center;
     flex-direction: column;
+    top: 110px;
+    background: rgb(252, 252, 252);
+    z-index: 5;
+
 
     span.btn {
         cursor: pointer;
@@ -22,7 +26,7 @@
         box-shadow: 0 0 6px 3px #ececec;    
         padding: 20px;
         border-radius: 30px;
-        margin-block-start: 50px;
+        margin-block-start: 30px;
         padding-inline-start: 40px;
         width: 500px;
         display: flex;
@@ -77,4 +81,10 @@
             width: 250px;
         }
     }
+}
+
+.Scroll__top {
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
