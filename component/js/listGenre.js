@@ -55,7 +55,7 @@ view.addEventListener('click', function handleClick(event) {
 
     // Add event click paragraph
     span.addEventListener('click', function () {
-      view.value = element.toLowerCase();
+      view.value = element;
       console.log(span);
 
       // Remove paragraph after click on it

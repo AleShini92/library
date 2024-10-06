@@ -15,10 +15,10 @@ export const showBookModal = async function(bookKey) {
         modal.id = 'bookModal';
         modal.className = 'modal';
         modal.innerHTML = `
-        <div class='modal-content'>
-        <span class='close-button'>&times;</span>
-        <h2>${bookDetails.title}</h2>
-        <p>${bookDetails.description ? (bookDetails.description.value || bookDetails.description) : 'No description available.'}</p>
+        <div class='modal__content'>
+            <span class='close__button'>&times;</span>
+            <h2>${bookDetails.title}</h2>
+            <p>${bookDetails.description ? (bookDetails.description.value || bookDetails.description) : 'No description available.'}</p>
         </div>
         `;
         // <img src='https://covers.openlibrary.org/b/id/${bookDetails.covers ? bookDetails.covers[0] : 'placeholder'}-M.jpg' alt='${bookDetails.title}'>
@@ -32,7 +32,7 @@ export const showBookModal = async function(bookKey) {
         containerCards.style.filter = 'blur(4px)';
 
         // Close the modal when clicking on the close button or outside the modal
-        const closeButton = modal.querySelector('.close-button');
+        const closeButton = modal.querySelector('.close__button');
         closeButton.addEventListener('click', function() {
             modal.style.display = 'none';
             modal.remove(); // Remove the modal from the DOM
