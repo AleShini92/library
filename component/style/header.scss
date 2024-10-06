@@ -60,6 +60,7 @@
         width: 530px;
 
         .sticky {
+            background: hsl(215.45deg 80.49% 83.92%);
             cursor: default;
             position: sticky;
             top: 0;
@@ -67,7 +68,6 @@
         }
 
         span {
-            //background: $primary-hover;
             border-radius: .5rem;
             color: $white;
             cursor: pointer;
@@ -75,10 +75,6 @@
             padding: .6rem;
             text-align: center;
             width: 250px;
-
-            &:hover {
-                background: $primary;
-            }
         }
     }
 }

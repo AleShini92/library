@@ -64,6 +64,7 @@ const listBook = document.querySelector('.list__book');
 genreInput.addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {
         const genre = genreInput.value.trim();  // Prende il valore dell'input e rimuove gli spazi vuoti
+        listBook.style.display = 'none';
         if (genre) {
             getBooks(genre);  // Avvia la funzione getBooks con il genere inserito
             listBook.innerHTML = ''

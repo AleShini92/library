@@ -1,5 +1,5 @@
 let genre = [
-  'Architecture', 'dance', 'design', 'Fashion', 'Film', 'Music', 'Painting', 'Photography', 'Bears', 'Cats', 'Kittens',
+  'Architecture', 'Dance', 'Design', 'Fashion', 'Film', 'Music', 'Painting', 'Photography', 'Bears', 'Cats', 'Kittens',
   'Dogs', 'Puppies', 'Fantasy', 'Horror', 'Humor', 'Literature', 'Magic', 'Plays', 'Poetry', 'Romance', 'Thriller', 'Biology',
   'Chemistry', 'Mathematics', 'Phisics', 'Programming', 'Management', 'Entrepreneurship', 'Finance', 'Archeology', 'Anthropology',
   'Cooking', 'Cookbooks', 'Exercise', 'Nutrition', 'Autobiographies', 'History', 'Women', 'Composers', 'Artists', 'Psychology',
@@ -20,7 +20,12 @@ genre.splice(56, 0, 'Books by Language');
 
 const view = document.getElementById('genre');
 
-// Funzione per gestire il click su inputNome e creare i paragrafi
+/**
+ * 
+ * @function handleClick
+ * @param {listBook}
+ * 
+ */
 view.addEventListener('click', function handleClick(event) {
   const listBook = document.querySelector('.list__book');
   listBook.style.background = 'hsl(214deg 34.72% 95.58%)';
@@ -32,53 +37,43 @@ view.addEventListener('click', function handleClick(event) {
     listBook.removeChild(listBook.firstChild);
   }
 
-  // Funzione callback per colorare gli elementi
-  function colorListCallback(item) {
-    if (genre.includes(item.textContent.trim())) {
-      switch (item.textContent.trim()) {
-        case 'Arts':
-        case 'Animals':
-        case 'Fiction':
-        case 'Science & Mathematics':
-        case 'Business & Finance':
-        case 'History':
-        case 'CookBooks':
-        case 'Biography':
-        case 'Textbooks':
-        case 'Books by Language':
-          item.style.backgroundColor = 'hsl(215.45deg 80.49% 83.92%)';
-          item.className = 'sticky';
-          break;
-        default:
-          item.style.backgroundColor = 'hsl(215, 23%, 56%)';
-      }
-    }
-  }
-
-  // Itera e crea i nuovi paragrafi con i nomi
+  /**
+   * 
+   * @param { genre[] }
+   * forEach - element inside array genre[]
+   */
   genre.forEach((element) => {
     const span = document.createElement('span');
     span.innerHTML = element;
     listBook.appendChild(span);
-    // Chiama la funzione per colorare lo sfondo dei nuovi elementi span
-    colorListCallback(span);
+    /***
+     * 
+     * @callback {colorList}
+     * 
+     */
+    colorList(span);
 
-    // Aggiunge l'evento di click ai paragrafi
+    // Add event click paragraph
     span.addEventListener('click', function () {
-      view.value = element;
+      view.value = element.toLowerCase();
       console.log(span);
 
-      // Rimuove i paragrafi dopo aver cliccato su uno di essi
+      // Remove paragraph after click on it
       listBook.innerHTML = '';
+      // remove backgroundColor element
       listBook.style.display = 'none';
     });
   });
 
-  // Previene che il click sull'inputNome scateni subito la rimozione
+  // bubbling capturing
   event.stopPropagation();
 });
 
-// Funzione per rimuovere i paragrafi quando clicchi fuori dall'area listBook o inputNome
+/*
+ * 
+ * Function to remove element inside @param { listBook }
+ * 
+ */
 document.addEventListener('click', function (event) {
   const listBook = document.querySelector('.list__book');
   
@@ -90,3 +85,34 @@ document.addEventListener('click', function (event) {
     }
   }
 });
+
+
+
+
+/**
+ * 
+ * @param {*} item 
+ * @param { genre[] }
+ * To create element with different backgroundColor
+ */
+
+function colorList(item) {
+  if (genre.includes(item.textContent.trim())) {
+    switch (item.textContent.trim()) {
+      case 'Arts':
+      case 'Animals':
+      case 'Fiction':
+      case 'Science & Mathematics':
+      case 'Business & Finance':
+      case 'History':
+      case 'CookBooks':
+      case 'Biography':
+      case 'Textbooks':
+      case 'Books by Language':
+        item.className = 'sticky';
+        break;
+      default:
+        item.style.backgroundColor = 'hsl(215, 23%, 56%)';
+    }
+  }
+}
