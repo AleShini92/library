@@ -1,9 +1,9 @@
 .container__search {
     align-items: center;
     flex-direction: column;
-    top: 110px;
     background: rgb(252, 252, 252);
-    z-index: 5;
+    justify-content: center;
+    height: 500px;
 
 
     span.btn {
@@ -62,6 +62,7 @@
         height: 250px;
         overflow: auto;
         width: 530px;
+        position: absolute;
 
         .sticky {
             background: hsl(215.45deg 80.49% 83.92%);
@@ -88,3 +89,33 @@
     top: 0;
     width: 100%;
 }
+
+
+/* HTML: <div class="loader"></div> */
+.loader {
+    width: 40px;
+    aspect-ratio: 1;
+    border: 7px solid #ddd;
+    border-radius: 50%;
+    position: absolute;
+    transform: rotate(45deg);
+    top: 15em;
+    transition: 0.2s ease;
+    right: 18em;
+    opacity: 0;
+  }
+  .loader::before {
+    content: "";
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    border: 6px solid #514b82;
+    animation: l18 2s infinite linear;
+  }
+  @keyframes l18 {
+      0%   {clip-path:polygon(50% 50%,0 0,0    0,0    0   ,0    0   ,0    0   )}
+      25%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0   ,100% 0   ,100% 0   )}
+      50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+      75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0    100%,0    100%)}
+      100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0    100%,0    0   )}
+  }

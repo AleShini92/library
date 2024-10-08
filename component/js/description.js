@@ -3,8 +3,9 @@ import axios from 'axios';
 
 export const showBookModal = async function(bookKey) {
 
-    let containerCards = document.querySelector('.container__cards')
-
+    let conatinerCards = document.querySelector('.container__cards');
+    let header = document.querySelector('header');
+    
     try {
         // Make an API call to fetch detailed book information
         const res = await axios.get(`https://openlibrary.org${bookKey}.json`);
@@ -28,8 +29,10 @@ export const showBookModal = async function(bookKey) {
 
         // Show the modal
         modal.style.display = 'block';
-        document.body.style.overflow = 'hidden';
-        containerCards.style.filter = 'blur(4px)';
+        conatinerCards.style.filter = 'blur(4px)';
+        conatinerCards.style.zIndex = '-1';
+        header.style.filter = 'blur(4px)';
+        header.style.zIndex = '-1';
 
         // Close the modal when clicking on the close button or outside the modal
         const closeButton = modal.querySelector('.close__button');
@@ -37,7 +40,10 @@ export const showBookModal = async function(bookKey) {
             modal.style.display = 'none';
             modal.remove(); // Remove the modal from the DOM
             document.body.style.overflow = 'auto';
-            containerCards.style.filter = 'blur(0)';
+            conatinerCards.style.filter = 'blur(0)';
+            header.style.filter = 'blur(0)';
+            conatinerCards.style.zIndex = '0';
+            header.style.zIndex = '0';
         });
     } catch (error) {
         console.error('Error fetching book details:', error);

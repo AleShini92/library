@@ -6,8 +6,8 @@
     <title>library</title>
 </head>
 <body>
-    <nav class="fixed w-100">
-        <figure class="w-20 p-3">
+    <nav class="w-100">
+        <figure class="w-6 p-3">
             <!-- logo library -->
              <a href="index.html" class="pointer">
                 <svg id="Livello_1" data-name="Livello 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 318.06 75.81">
@@ -26,38 +26,41 @@
         </figure>
     </nav>
     <!-- search bar -->
-    <header>
-        <div class="container__search d-flex w-60 m-auto relative">
-            <h1>Find Books by Genre</h1>
-            <div class="search">
-                <input class="poppins-bold" type="text" id="genre" placeholder="e.g. Fantasy, Horror, Music...">
-                <span class="btn" id="searchBtn">
-                    <span class="poppins-bold">Search</span>
-                    <svg width="32" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M31.5648 27.666L25.3331 21.4354C25.0518 21.1542 24.6706 20.9979 24.2705 20.9979H23.2517C24.9768 18.7919
-                            26.0019 16.0172 26.0019 12.9987C26.0019 5.81818 20.1827 0 13.001 0C5.81918 0 0 5.81818 0 12.9987C0 20.1793
-                            5.81918 25.9975 13.001 25.9975C16.0199 25.9975 18.7951 24.9726 21.0015 23.2477V24.2664C21.0015 24.6663 21.1578
-                            25.0476 21.4391 25.3288L27.6708 31.5594C28.2583 32.1469 29.2084 32.1469 29.7897 31.5594L31.5586 29.7908C32.1461 29.2034
-                            32.1461 28.2535 31.5648 27.666ZM13.001 20.9979C8.58188 20.9979 5.00037 17.4233 5.00037 12.9987C5.00037 8.58041 8.57563
-                            4.99951 13.001 4.99951C17.42 4.99951 21.0015 8.57416 21.0015 12.9987C21.0015 17.417 17.4263 20.9979 13.001 20.9979Z"
-                            fill="white"
-                        />
-                    </svg>
-                </span>
+    <div class="library">
+        <header>
+            <div class="container__search d-flex">
+                <h1>Find Books by Genre</h1>
+                <div class="search">
+                    <input class="poppins-bold" type="text" id="genre" placeholder="e.g. Fantasy, Horror, Music...">
+                    <span class="btn" id="searchBtn">
+                        <span class="poppins-bold">Search</span>
+                        <svg width="32" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M31.5648 27.666L25.3331 21.4354C25.0518 21.1542 24.6706 20.9979 24.2705 20.9979H23.2517C24.9768 18.7919
+                                26.0019 16.0172 26.0019 12.9987C26.0019 5.81818 20.1827 0 13.001 0C5.81918 0 0 5.81818 0 12.9987C0 20.1793
+                                5.81918 25.9975 13.001 25.9975C16.0199 25.9975 18.7951 24.9726 21.0015 23.2477V24.2664C21.0015 24.6663 21.1578
+                                25.0476 21.4391 25.3288L27.6708 31.5594C28.2583 32.1469 29.2084 32.1469 29.7897 31.5594L31.5586 29.7908C32.1461 29.2034
+                                32.1461 28.2535 31.5648 27.666ZM13.001 20.9979C8.58188 20.9979 5.00037 17.4233 5.00037 12.9987C5.00037 8.58041 8.57563
+                                4.99951 13.001 4.99951C17.42 4.99951 21.0015 8.57416 21.0015 12.9987C21.0015 17.417 17.4263 20.9979 13.001 20.9979Z"
+                                fill="white"
+                            />
+                        </svg>
+                    </span>
+                </div>
+                <div class="container__list d-flex pt-3">
+                    <div class="list__book"></div>
+                </div>
             </div>
-            <div class="container__list d-flex pt-3">
-                <div class="list__book"></div>
-            </div>
-        </div>
-    </header>
-    <!-- main section result api call library -->
-    <main>
-        <section class="container__cards d-flex w-90 m-auto">
-            <h2 id="resultTitle"></h2>
-            <article class="container__card d-flex w-100" id="bookList">
-            </article>    
-        </section>
-    </main>
+        </header>
+        <!-- main section result api call library -->
+        <main>
+            <section class="container__cards d-flex w-90 m-auto">
+                <div class="loader"></div>
+                <h2 id="resultTitle"></h2>
+                <article class="container__card d-flex w-100" id="bookList">
+                </article>    
+            </section>
+        </main>
+    </div>
     <script src="dist/main.bundle.js"></script>
 </body>
 </html>

@@ -84,10 +84,6 @@ html {
 
 // menu
 
-body {
-  height: 1500px;
-}
-
 $position: (
   "fixed": fixed,
   "stycky": stycky,
@@ -103,4 +99,16 @@ $position: (
 
 nav {
   z-index: 9;
+}
+
+.library {
+  display: flex;
+  justify-content: space-between;
+  height: 80vh;
+  z-index: 4;
+}
+
+header {
+  display: flex;
+  justify-content: center;
 }

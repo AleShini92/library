@@ -13,13 +13,16 @@ import { showBookModal } from './description';
 const getBooks = async function(genre) {
     try {
         const res = await axios.get(
-            `https://openlibrary.org/subjects/${genre}.json?limit=20`,
+            `https://openlibrary.org/subjects/${genre}.json?limit=21`,
         );
         const books = res.data.works;
         console.log(books);
         if (books.length !== 0) {
             const searchGenreTitle = `${genre[0].toUpperCase()}${genre.slice(1)}`;
             document.querySelector('#resultTitle').innerText = `Books in the '${searchGenreTitle}' genre:`;
+            document.querySelector('.container__cards').style.backgroundColor = 'hsl(214 23% 50% / 1)';
+
+            document.querySelector('.loader').style.opacity = '0';
             
             // Clear previous results
             const bookList = document.querySelector('#bookList');
@@ -77,10 +80,13 @@ genreInput.addEventListener('keydown', function(event) {
  * @param { searchBtn }
  * @param { genre }
 */
+
+
 document.querySelector('#searchBtn').addEventListener('click', function() {
     const genre = document.querySelector('#genre').value.toLowerCase();
     if (genre) {
         getBooks(genre);
+        document.querySelector('.loader').style.opacity = '1';
     }
     else {
         document.querySelector('#resultTitle').innerText = 'genre not found!!';

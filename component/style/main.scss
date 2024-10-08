@@ -5,15 +5,25 @@ main {
 }
 
 .container__cards {
-    justify-content: center;
+    //background: hsl(214 23% 50% / 1);
+    border-radius: 30px;
     flex-direction: column;
     position: relative;
-    top: 180px;
+    padding: 40px;
+    justify-content: center;
+    width: 80%;
+
+    h2 {
+        color: $white;
+    }
+
     
     .container__card {
         flex-direction: row;
         flex-wrap: wrap;
         gap: 20px;
+        overflow: auto;
+        height: 70vh;
 
         figure {
             height: 220px;
