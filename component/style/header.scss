@@ -1,3 +1,52 @@
+nav {
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+header {
+    display: flex;
+    justify-content: center;
+}  
+
+.library {
+    display: flex;
+    justify-content: space-between;
+    height: 80vh;
+    z-index: 4;
+}
+
+.my__book {
+    position: absolute;
+    overflow: hidden;
+    right: 20px;
+    top: 8em;
+    z-index: 5;
+
+}
+
+.container__book {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background: blue;
+    right: -200px;
+    transition: all 0.3s ease;
+    padding: 10px;
+    background: hsl(214 23% 40% / 1);
+    color: white;
+
+    .clear {
+        position: absolute;
+        bottom: 10px;
+        right: 20px;
+    }
+}
+
+.to__right {
+    right: 0px;
+}
+
 .container__search {
     align-items: center;
     flex-direction: column;

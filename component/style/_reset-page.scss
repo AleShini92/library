@@ -97,18 +97,15 @@ $position: (
   }
 }
 
-nav {
-  z-index: 9;
+
+.book:hover {
+  fill: $primary;
 }
 
-.library {
-  display: flex;
-  justify-content: space-between;
-  height: 80vh;
-  z-index: 4;
+.overflow__auto {
+  overflow: auto;
 }
 
-header {
-  display: flex;
-  justify-content: center;
+.text-right {
+  text-align: right;
 }
