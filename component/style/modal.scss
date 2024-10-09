@@ -21,6 +21,7 @@
     box-shadow: 0 0 16px 3px hsl(215, 23%, 56%);
     background: hsl(215, 23%, 56%);
     color: white;
+    position: relative;
 
     h2 {
         margin-bottom: 10px;
@@ -33,5 +34,11 @@
         font-size: 26px;
         left: 25px;
         top: 10px;
+    }
+
+    .prefer {
+        position: absolute;
+        right: 10px;
+        bottom: 2px;
     }
 }
