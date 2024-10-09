@@ -1,0 +1,44 @@
+nav {
+    justify-content: space-between;
+    align-items: center;
+
+    figure.book svg {
+        :hover {
+            fill: $primary
+        }    
+    }
+}
+
+.book {
+    z-index: 2;
+}
+
+.my__book {
+    position: absolute;
+    overflow: hidden;
+    right: 20px;
+    top: 8em;
+
+    .container__book {
+        border-radius: 1em; 
+        position: relative;
+        width: 340px;
+        height: 310px;
+        right: -343px;
+        transition: all 0.3s ease;
+        padding: 10px;
+        background: hsl(214 23% 40% / 1);
+        color: white;
+        z-index: 1;
+    }
+    
+    .to__right {
+        right: 0px;
+    }
+
+    .clear {
+        position: absolute;
+        bottom: 10px;
+        right: 20px;
+    }
+}

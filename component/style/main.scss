@@ -4,6 +4,13 @@ main {
     position: relative;
 }
 
+.library {
+    display: flex;
+    justify-content: space-between;
+    height: 80vh;
+    z-index: 4;
+}
+
 .container__cards {
     border-radius: 30px;
     flex-direction: column;
