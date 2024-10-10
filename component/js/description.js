@@ -31,7 +31,7 @@ export const showBookModal = async function(bookKey) {
         document.querySelector('main').appendChild(modal);
 
         // Show the modal
-        modal.style.display = 'block';
+        modal.style.opacity = 'block';
         conatinerCards.style.filter = 'blur(4px)';
         conatinerCards.style.zIndex = '-1';
         header.style.filter = 'blur(4px)';
@@ -41,7 +41,7 @@ export const showBookModal = async function(bookKey) {
         const closeButton = modal.querySelector('.close__button');
         
         closeButton.addEventListener('click', function() {
-            modal.style.display = 'none';
+            modal.style.opacity = 'none';
             modal.remove(); // Remove the modal from the DOM
             document.body.style.overflow = 'auto';
             conatinerCards.style.filter = 'blur(0)';
@@ -52,13 +52,13 @@ export const showBookModal = async function(bookKey) {
         let prefer = document.querySelector('.prefer');
         let heart = document.querySelector('.heart');
         let newColor = 'white';
-
+        
         // add list prefer books
         prefer.addEventListener('click', () => {
             changeColor();
 
             // Controlla se c'è un colore salvato nel localStorage
-            const savedColor = localStorage.getItem('heart');
+            const savedColor = localStorage.getItem('heartColor');
             if (savedColor) {
                 heart.style.fill = savedColor;
             } else {
@@ -76,12 +76,13 @@ export const showBookModal = async function(bookKey) {
         });
 
         function changeColor() {
-            // Confronta il colore corrente del cuore con il nuovo colore
+            heart.style.fill = 'white';
+            
+            //Confronta il colore corrente del cuore con il nuovo colore
             if (heart.style.fill !== newColor) {
                 heart.style.fill = newColor;
 
-                // Salva il nuovo colore nel localStorage
-                localStorage.setItem('heart', newColor);
+                localStorage.setItem('heartColor', newColor);
             }
         }    
     }
@@ -92,5 +93,4 @@ export const showBookModal = async function(bookKey) {
         alert('Error fetching book details. Please try again later.');
     }
 };
-
 export default showBookModal;
