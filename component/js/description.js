@@ -31,7 +31,7 @@ export const showBookModal = async function(bookKey) {
         document.querySelector('main').appendChild(modal);
 
         // Show the modal
-        modal.style.opacity = 'block';
+        modal.style.display = 'block';
         conatinerCards.style.filter = 'blur(4px)';
         conatinerCards.style.zIndex = '-1';
         header.style.filter = 'blur(4px)';
@@ -41,7 +41,7 @@ export const showBookModal = async function(bookKey) {
         const closeButton = modal.querySelector('.close__button');
         
         closeButton.addEventListener('click', function() {
-            modal.style.opacity = 'none';
+            modal.style.display = 'none';
             modal.remove(); // Remove the modal from the DOM
             document.body.style.overflow = 'auto';
             conatinerCards.style.filter = 'blur(0)';
