@@ -38,11 +38,12 @@ export const showBookModal = async function(bookKey) {
         header.style.zIndex = '-1';
 
         // Close the modal when clicking on the close button or outside the modal
-        const closeButton = modal.querySelector('.close__button');
+        const closeButton = document.querySelector('.close__button');
         
         closeButton.addEventListener('click', function() {
+            console.log('close button');
             modal.style.display = 'none';
-            modal.remove(); // Remove the modal from the DOM
+            //modal.remove(); // Remove the modal from the DOM
             document.body.style.overflow = 'auto';
             conatinerCards.style.filter = 'blur(0)';
             header.style.filter = 'blur(0)';
