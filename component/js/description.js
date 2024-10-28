@@ -37,7 +37,7 @@ export const showBookModal = async function(bookKey) {
         header.style.filter = 'blur(4px)';
         header.style.zIndex = '-1';
 
-        // Close the modal when clicking on the close button or outside the modal
+        // Close the modal when clicking on the close button
         const closeButton = document.querySelector('.close__button');
         
         closeButton.addEventListener('click', function() {
@@ -49,25 +49,26 @@ export const showBookModal = async function(bookKey) {
             containerCards.style.zIndex = '0';
             header.style.zIndex = '0';
         });
+
         let prefer = document.querySelector('.prefer');
         let heart = document.querySelector('.heart');
-        let newColor = 'white';
-        
-        // add list prefer books
+        const default_color = 'black';
+        const preferred_color = 'white';
+
+        // Recupera il colore salvato all'avvio
+        const savedColor = localStorage.getItem('heartColor') || default_color;
+        heart.style.fill = savedColor;
+
+        /**
+         * Aggiunge il titolo del libro alla lista preferita al click
+         */
         prefer.addEventListener('click', () => {
+            // Cambia il colore del cuore
             changeColor();
 
-            // Controlla se c'è un colore salvato nel localStorage
-            const savedColor = localStorage.getItem('heartColor');
-            if (savedColor) {
-                heart.style.fill = savedColor;
-            } else {
-                heart.style.fill = 'black'; // colore di default se non è salvato nulla
-            }
-
-            // Aggiungi il libro alla lista
+            // Aggiungi il titolo del libro alla lista
             let list = document.querySelector('.list');
-            let bookTitle = bookDetails?.title || 'Titolo Sconosciuto'; // Assicurati che `bookDetails` sia definito
+            let bookTitle = bookDetails?.title || 'Titolo Sconosciuto'; // `bookDetails` è definito
             list.innerHTML += `
                 <div class="flex">
                     <p class='my__list-book mt-20'> • ${bookTitle} </p>
@@ -75,16 +76,21 @@ export const showBookModal = async function(bookKey) {
             `;
         });
 
+        /**
+         * @function
+         * @param { heart };
+         * Cambia il colore del cuore e lo salva nel localStorage
+         */
         function changeColor() {
-            heart.style.fill = 'white';
-            
-            //Confronta il colore corrente del cuore con il nuovo colore
-            if (heart.style.fill !== newColor) {
-                heart.style.fill = newColor;
-
-                localStorage.setItem('heartColor', newColor);
+            // Cambia il colore del cuore tra bianco e nero
+            if (heart.style.fill === preferred_color) {
+                heart.style.fill = default_color;
+                localStorage.setItem('heartColor', default_color);
+            } else {
+                heart.style.fill = preferred_color;
+                localStorage.setItem('heartColor', preferred_color);
             }
-        }    
+        }
     }
 
 

@@ -3,7 +3,11 @@ let containerBook = document.querySelector('.container__book');
 let list = document.querySelector('.list');
 let clear = document.querySelector('.clear');
 
-// Evento click per spostare il container a destra
+/**
+ * 
+ * @param { book }
+ * @event change position prefer book
+ */
 book.addEventListener('click', () => {
     console.log("click");
     containerBook.classList.toggle('to__right');
