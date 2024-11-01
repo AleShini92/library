@@ -1,10 +1,16 @@
+@use 'color' as c;
+
 nav {
     justify-content: space-between;
     align-items: center;
 
+    figure {
+        width: 200px;
+    }
+
     figure.book svg {
         :hover {
-            fill: $primary
+            fill: c.$primary;
         }    
     }
 }

@@ -1,13 +1,10 @@
-//import style-map scss
-@import 'color.scss';
-@import 'font-map.scss';
-@import 'reset-page.scss';
-@import 'responsive-map.scss';
-@import 'space-map.scss';
+// scss style-map
+@import 'reset-page';
+@import 'font-map';
+@import 'responsive-map';
+@import 'space-map';
 
 // import style page
-
 @import 'header.scss';
 @import 'main.scss';
-@import 'modal.scss';
 @import 'nav.scss';

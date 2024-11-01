@@ -1,3 +1,5 @@
+@use 'color' as c;
+
 header {
     display: flex;
     justify-content: center;
@@ -16,7 +18,7 @@ header {
         cursor: pointer;
         color: var(--white);
         height: 100%;
-        background: $primary;
+        background: c.$primary;
         position: absolute;
         top: 0;
         right: 0;
@@ -51,7 +53,7 @@ header {
             width: 20px;
             left: 10px;
             top: 18px;
-            fill: $primary;
+            fill: c.$primary;
         }
     }
 }
@@ -80,7 +82,7 @@ header {
 
         span {
             border-radius: .5rem;
-            color: $white;
+            color: c.$white;
             cursor: pointer;
             display: block;
             padding: .6rem;

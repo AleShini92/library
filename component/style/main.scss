@@ -20,7 +20,7 @@ main {
     width: 80%;
 
     h2 {
-        color: $white;
+        color: c.$white;
     }
 
     
@@ -57,7 +57,7 @@ main {
                 background: c.$primary;
 
                 strong {
-                    color: white;
+                    color: c.$white;
                 }
             }
         }
