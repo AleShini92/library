@@ -1,7 +1,6 @@
 @use 'color' as c;
 
 nav {
-    //justify-content: space-between;
     align-items: center;
 
     figure {
@@ -21,7 +20,6 @@ nav {
 
 .my__book {
     overflow: hidden;
-    //position: absolute;
     right: 20px;
     top: 8em;
 
@@ -31,7 +29,6 @@ nav {
         color: white;
         height: 310px;
         padding: 10px;
-        //position: relative;
         right: -343px;
         transition: all 0.3s ease;
         width: 340px;
@@ -44,7 +41,6 @@ nav {
 
     .clear {
         bottom: 10px;
-        //position: absolute;
         right: 20px;
     }
 }

@@ -2,7 +2,7 @@ import axios from 'axios';
 import { showBookModal } from './description';
 /***
  *
- * @async
+ * @async function
  * @param { genre }
  * @param { getBooks }
  * @param { books }
@@ -32,7 +32,7 @@ const getBooks = async function(genre) {
             books.forEach(book => {
                 const card = `
                     <div class='card bg-card b-radius_1' data-book-id='${book.key}'>
-                        <div class='card__img  space-between m-auto p-2'>
+                        <div class='card__img space-between m-auto p-2'>
                             <figure>
                                 <img class='obj-fit w-100' src='https://covers.openlibrary.org/b/id/${book.cover_id}.jpg' title='${book.title}' alt='${book.title}'/>
                             </figure>
@@ -66,10 +66,10 @@ const listBook = document.querySelector('.list__book');
 // Add event 'keydown' for 'Enter'
 genreInput.addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {
-        const genre = genreInput.value.trim().toLowerCase();  // Prende il valore dell'input e rimuove gli spazi vuoti
+        const genre = genreInput.value.trim().toLowerCase();  // take the input value and delete the space
         listBook.style.display = 'none';
         if (genre) {
-            getBooks(genre);  // Avvia la funzione getBooks con il genere inserito
+            getBooks(genre);  // start the function getBooks with the genre
             listBook.innerHTML = ''
         }
     }
