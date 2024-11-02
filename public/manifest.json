@@ -1,0 +1,25 @@
+{
+    "short_name": "library",
+    "name": "library",
+    "icons": [
+      {
+        "src": "logo_20x20.svg",
+        "sizes": "64x64 32x32 24x24 16x16",
+        "type": "image/svg+xml"
+      },
+      {
+        "src": "logo.png",
+        "type": "image/png",
+        "sizes": "64x64"
+      },
+      {
+        "src": "logo.png",
+        "type": "image/png",
+        "sizes": "32x32"
+      }
+    ],
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#000000",
+    "background_color": "#ffffff"
+  }
