@@ -25,19 +25,6 @@
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-<!-- ABOUT PROJECT -->
-
-> ## **Project**
-
-> [!NOTE]
-> created with:
-
-- [x] HTML
-- [x] javascript
-- [x] scss
-- [x] img
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- GETTING STARTED -->
 > ## **Getting started**
 
