@@ -24,10 +24,6 @@
 
 `</>` [Link Online](https://mylibraryapi.netlify.app) <--- Click Here to visit the page online.
 
-> ## **Description**
-
-• created an application with a API that call a external server "open library"
-
 <!-- ABOUT PROJECT -->
 
 > ## **Project**
