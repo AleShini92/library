@@ -1,15 +1,9 @@
 @use 'color' as c;
 
-header {
-    display: flex;
-    justify-content: center;
-}
-
 .container__search {
     align-items: center;
     flex-direction: column;
     background: rgb(252, 252, 252);
-    justify-content: center;
     height: 500px;
     padding-left: 30px;
 
@@ -19,14 +13,13 @@ header {
         color: var(--white);
         height: 100%;
         background: c.$primary;
-        position: absolute;
+        //position: absolute;
         top: 0;
         right: 0;
         padding: 10px;
         border-radius: 40px;
         width: 150px;
-        display: flex;
-        justify-content: space-evenly;
+        //display: flex;
         align-items: center;
     }
 
@@ -37,8 +30,8 @@ header {
         margin-block-start: 30px;
         padding-inline-start: 40px;
         width: 500px;
-        display: flex;
-        justify-content: space-between;
+        // display: flex;
+        // justify-content: space-between;
         overflow: hidden;
         position: relative;
 
@@ -59,7 +52,7 @@ header {
 }
 
 .container__list {
-    justify-content: center;
+    //justify-content: center;
 
     .list__book {
         align-items: center;
@@ -70,7 +63,7 @@ header {
         height: 250px;
         overflow: auto;
         width: 530px;
-        position: absolute;
+        //position: absolute;
 
         .sticky {
             background: hsl(215.45deg 80.49% 83.92%);

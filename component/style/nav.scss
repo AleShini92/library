@@ -1,7 +1,7 @@
 @use 'color' as c;
 
 nav {
-    justify-content: space-between;
+    //justify-content: space-between;
     align-items: center;
 
     figure {
@@ -20,21 +20,21 @@ nav {
 }
 
 .my__book {
-    position: absolute;
     overflow: hidden;
+    //position: absolute;
     right: 20px;
     top: 8em;
 
     .container__book {
+        background: hsl(214 23% 40% / 1);
         border-radius: 1em; 
-        position: relative;
-        width: 340px;
+        color: white;
         height: 310px;
+        padding: 10px;
+        //position: relative;
         right: -343px;
         transition: all 0.3s ease;
-        padding: 10px;
-        background: hsl(214 23% 40% / 1);
-        color: white;
+        width: 340px;
         z-index: 1;
     }
     
@@ -43,8 +43,8 @@ nav {
     }
 
     .clear {
-        position: absolute;
         bottom: 10px;
+        //position: absolute;
         right: 20px;
     }
 }

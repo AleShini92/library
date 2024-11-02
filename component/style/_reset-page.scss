@@ -36,33 +36,41 @@ html {
   box-sizing: border-box;
 }
 
-.poppins-regular {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+/*
+*
+* poppins font map
+*
+*/
+
+$poppins: (
+  'light': 400,
+  'normal': 500,
+  'bold': 700
+);
+
+@each $key, $val in $poppins {
+  .poppins-#{$key} {
+    font-weight: $val;
+  }
 }
 
-.poppins-medium {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-}
+/*
+*
+* justify-content map
+*
+*/
 
-.poppins-bold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.poppins-regular-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: italic;
-}
+$justify-content: (
+  'justify-center': center,
+  'space-between': space-between,
+  'space-evenly': space-evenly,
+);
 
 
-%flex {
-  display: flex;
+@each $key, $val in $justify-content {
+  .#{$key} {
+    justify-content: $val;
+  }
 }
 
 .d-flex {

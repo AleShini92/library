@@ -6,7 +6,7 @@
     <title>library</title>
 </head>
 <body>
-    <nav class="w-100 d-flex p-3">
+    <nav class="w-100 d-flex space-between p-3">
         <figure class="w-6 p-3">
             <!-- logo library -->
              <a href="index.html" class="pointer">
@@ -38,23 +38,24 @@
                 C304,467.4,315.7,475.3,326.4,471.5L326.4,471.5z"/>
             </svg>
         </figure>
-        <article class="my__book">
-            <div class="container__book">
+        <!-- prefer user book -->
+        <article class="my__book absolute">
+            <div class="container__book relative">
                 <div class="list mt-10 overflow__auto h-50">
                     <!-- title books -->
                 </div>
-                <div class="clear pointer">Delete last title</div>
+                <div class="clear pointer absolute">Delete last title</div>
             </div>
         </article>
     </nav>
     <!-- search bar -->
-    <section class="library">
+    <section class="library d-flex space-between">
         <header>
-            <article class="container__search d-flex">
+            <article class="container__search d-flex justify-center">
                 <h1>Find Books by Genre</h1>
-                <div class="search">
+                <div class="search d-flex space-between">
                     <input class="poppins-bold" type="text" id="genre" placeholder="e.g. Fantasy, Horror, Music...">
-                    <span class="btn" id="searchBtn">
+                    <span class="btn d-flex space-evenly absolute" id="searchBtn">
                         <span class="poppins-bold">Search</span>
                         <svg width="32" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M31.5648 27.666L25.3331 21.4354C25.0518 21.1542 24.6706 20.9979 24.2705 20.9979H23.2517C24.9768 18.7919
@@ -68,15 +69,15 @@
                         </svg>
                     </span>
                 </div>
-                <div class="container__list d-flex pt-3">
-                    <div class="list__book">
+                <div class="container__list d-flex pt-3 justify-center">
+                    <div class="list__book absolute">
                     </div>
                 </div>
             </article>
         </header>
         <!-- main section result api call library -->
         <main>
-            <section class="container__cards d-flex w-90 m-auto">
+            <section class="container__cards d-flex relative justify-center w-90 m-auto">
                 <div class="loader"></div>
                 <h2 id="resultTitle"></h2>
                 <article class="container__card d-flex w-100" id="bookList"></article>    

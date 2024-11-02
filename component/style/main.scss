@@ -5,8 +5,8 @@ main {
 }
 
 .library {
-    display: flex;
-    justify-content: space-between;
+    // display: flex;
+    // justify-content: space-between;
     height: 80vh;
     z-index: 4;
 }
@@ -14,9 +14,9 @@ main {
 .container__cards {
     border-radius: 30px;
     flex-direction: column;
-    position: relative;
+    //position: relative;
     padding: 40px;
-    justify-content: center;
+    //justify-content: center;
     width: 80%;
 
     h2 {
@@ -47,7 +47,7 @@ main {
             display: flex;
             flex-direction: column;
             height: 310px;
-            justify-content: space-between;
+            //justify-content: space-between;
             width: 200px;
         }
 
