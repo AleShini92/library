@@ -18,12 +18,6 @@
 - [x] javascript
 - [x] scss
 
-> [!IMPORTANT]
-**Link Online in description:**<br>
-
-`</>` [Link Online](https://mylibraryapi.netlify.app) <--- Click Here to visit the page online.
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <!-- GETTING STARTED -->
 > ## **Getting started**
@@ -37,10 +31,14 @@
    npm install
    ```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LINK IN DESCRIPTION -->
+
 > [!IMPORTANT]
 **Link Online in description:**<br>
 
 `</>` [Link Online](https://mylibraryapi.netlify.app) <--- Click Here to visit the page online.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 > [!NOTE]
 > Deploy project on<br>
