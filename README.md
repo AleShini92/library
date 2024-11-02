@@ -1,5 +1,4 @@
 # Library API
-<a id="readme-top"></a>
 
 <!-- PROJECT LOGO -->
 <div>
@@ -23,7 +22,7 @@
 **Link Online in description:**<br>
 
 `</>` [Link Online](https://mylibraryapi.netlify.app) <--- Click Here to visit the page online.
-<p style="text-align: right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 <!-- ABOUT PROJECT -->
@@ -37,7 +36,7 @@
 - [x] javascript
 - [x] scss
 - [x] img
-<p style="text-align: right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 > ## **Getting started**
@@ -50,8 +49,7 @@
    ```sh
    npm install
    ```
-<p style="text-align: right">(<a href="#readme-top">back to top</a>)</p>
-
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 > [!IMPORTANT]
 **Link Online in description:**<br>
 
@@ -61,4 +59,4 @@
 > Deploy project on<br>
 
 [netlify](https://www.netlify.com/)
-<p style="text-align: right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
