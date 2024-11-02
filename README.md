@@ -1,7 +1,7 @@
 # Library API
 
 
-![Project Img](component/img/library.svg){width= 200px}
+![Project Img](component/img/library.svg)
 
 > ## **Description**
 
