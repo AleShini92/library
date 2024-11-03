@@ -54,7 +54,7 @@
 <!-- LINK IN DESCRIPTION -->
 
 > [!IMPORTANT]
-**Link Online in description**<br>
+**Link Online in description**
 
 `</>` [Link Online](https://mylibraryapi.netlify.app) <--- Click Here to visit the page online.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
