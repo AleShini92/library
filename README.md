@@ -2,12 +2,12 @@
 <a id="readme-top"></a>
 <!-- PROJECT LOGO -->
 <div>
-    <img src="component/img/library.svg" alt="logo" width="200">
+   <img src="component/img/library.svg" alt="logo" title="logo app" width="300">
 </div>
 
 > ## **Description**
 
-• created an application with a API that call a external server "open library"
+• created an application with a API that call a external server <span color="violet">"open library"</span> 
 
 > ## **Project**
 
@@ -17,16 +17,16 @@
 - [x] HTML
 - [x] javascript
 - [x] scss
-
+- [x] webpack
 
 <!-- GETTING STARTED -->
 > ## **Getting started**
 
-1. Clone the repo
+1. Clone the repo:
    ```sh
    git clone https://github.com/AleShini92/library.git
    ```
-2. Install NPM packages
+2. Install NPM packages:
    ```sh
    npm install
    ```
