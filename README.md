@@ -9,18 +9,18 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li>
-      <a href="#description">Description</a>
-   </li>
-   <li>
-      <a href="#project">About The Project</a>
-   </li>
-   <li>
-      <a href="#getting-started">Get Started</a>
-   </li>
-   <li>
-      <a href="#link-online-in-description">Link Online</a>
-   </li>
+      <li>
+         <a href="#description">Description</a>
+      </li>
+      <li>
+         <a href="#project">About The Project</a>
+      </li>
+      <li>
+         <a href="#getting-started">Get Started</a>
+      </li>
+      <li>
+         <a href="#link-online-in-description">Link Online</a>
+      </li>
   </ol>
 </details>
 
@@ -53,7 +53,6 @@
 
 <!-- LINK IN DESCRIPTION -->
 
-> [!IMPORTANT]
 #### **Link Online in description**
 
 `</>` [Link Online](https://mylibraryapi.netlify.app) <--- Click Here to visit the page online.
