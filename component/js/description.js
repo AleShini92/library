@@ -25,12 +25,11 @@ export const showBookModal = async function(bookKey) {
             </div>
         </div>
         `;
-        // <img src='https://covers.openlibrary.org/b/id/${bookDetails.covers ? bookDetails.covers[0] : 'placeholder'}-M.jpg' alt='${bookDetails.title}'>
 
         // Append the modal to the body
         document.querySelector('main').appendChild(modal);
 
-        // Show the modal
+        // Show the modal css style
         modal.style.display = 'block';
         containerCards.style.filter = 'blur(4px)';
         containerCards.style.zIndex = '-1';
@@ -52,23 +51,23 @@ export const showBookModal = async function(bookKey) {
 
         let prefer = document.querySelector('.prefer');
         let heart = document.querySelector('.heart');
-        const default_color = 'black';
-        const preferred_color = 'white';
+        const defaultColor = 'white';
+        const preferredColor = 'red';
 
-        // Recupera il colore salvato all'avvio
-        const savedColor = localStorage.getItem('heartColor') || default_color;
+        // recover the color on localStorage
+        const savedColor = localStorage.getItem('heartColor') || defaultColor;
         heart.style.fill = savedColor;
 
         /**
-         * Aggiunge il titolo del libro alla lista preferita al click
+         * Add title to prefer list
          */
         prefer.addEventListener('click', () => {
-            // Cambia il colore del cuore
+            // Change heart's color
             changeColor();
 
-            // Aggiungi il titolo del libro alla lista
+            // Add title to prefer list
             let list = document.querySelector('.list');
-            let bookTitle = bookDetails?.title || 'Titolo Sconosciuto'; // `bookDetails` è definito
+            let bookTitle = bookDetails?.title || 'Titolo Sconosciuto'; // `bookDetails` is defined
             list.innerHTML += `
                 <div class="flex">
                     <p class='my__list-book mt-20'> • ${bookTitle} </p>
@@ -79,24 +78,24 @@ export const showBookModal = async function(bookKey) {
         /**
          * @function
          * @param { heart };
-         * Cambia il colore del cuore e lo salva nel localStorage
+         * Change heart's color and save on the localStorage
          */
         function changeColor() {
-            // Cambia il colore del cuore tra bianco e nero
-            if (heart.style.fill === preferred_color) {
-                heart.style.fill = default_color;
-                localStorage.setItem('heartColor', default_color);
+            // Switch heart's color to with & black
+            if (heart.style.fill === preferredColor) {
+                heart.style.fill = defaultColor;
+                localStorage.setItem('heartColor', defaultColor);
             } else {
-                heart.style.fill = preferred_color;
-                localStorage.setItem('heartColor', preferred_color);
+                heart.style.fill = preferredColor;
+                localStorage.setItem('heartColor', preferredColor);
             }
         }
     }
 
 
     catch (error) {
-        console.error('Error fetching book details:', error);
-        alert('Error fetching book details. Please try again later.');
+        //console.error('Error fetching book details:', error);
+        alert('Error fetching book details. Please try again later.');  
     }
 };
 export default showBookModal;

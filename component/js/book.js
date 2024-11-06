@@ -20,7 +20,5 @@ clear.addEventListener('click', () => {
     // Verifica se esiste un figlio elemento e lo rimuove
     if (list.lastElementChild) {
         list.lastElementChild.remove();
-    } else {
-        console.log("Nessun elemento da rimuovere");
     }
 });
