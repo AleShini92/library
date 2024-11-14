@@ -2,12 +2,12 @@
 <a id="readme-top"></a>
 <!-- PROJECT LOGO -->
 <div>
-   <img src="component/img/library.svg" alt="logo" title="logo app" width="300">
+   <img src="assets/img/logo.png" alt="logo" title="logo app" width="300">
 </div>
 
 <!-- TABLE OF CONTENTS -->
 <details>
-  <summary>Table of Contents</summary>
+  <summary top="10px">Table of Contents</summary>
   <ol>
       <li>
          <a href="#description">Description</a>
