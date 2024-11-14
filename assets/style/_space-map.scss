@@ -115,7 +115,7 @@ $padding: (
   }
 
   .px-#{$key} {
-    padding-block: $val;
+    padding-inline: $val;
   }
 
   .pb-#{$key} {
@@ -150,14 +150,13 @@ $w-100: 100%;
 $w-50:  50%;
 
 $width: (
-  "w-1": $w-1,
-  "w-2": $w-2,
-  "w-3": $w-3,
-  "w-4": $w-4,
-  "w-5": $w-5,
-  "w-6": $w-6,
+  "w-10": $w-1,
+  "w-20": $w-2,
+  "w-30": $w-3,
+  "w-40": $w-4,
+  "w-50": $w-5,
+  "w-60": $w-6,
   "w-100": $w-100,
-  "w-50": $w-50,
 );
 
 @each $key, $val in $width {
@@ -248,5 +247,18 @@ $height: (
 
   .h-#{$key} {
     height: $val;
+  }
+}
+
+
+$gap: (
+  1: 10px,
+  2: 20px,
+  3: 30px
+);
+
+@each $key, $val in $gap {
+  .gap-#{$key} {
+    gap: $val;
   }
 }

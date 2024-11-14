@@ -2,11 +2,11 @@ import axios from 'axios';
 import { showBookModal } from './description';
 /***
  *
- * @async function
- * @param { genre }
- * @param { getBooks }
- * @param { books }
- * @param { BookList }
+ * @async function;
+ * @param { genre };
+ * @param { getBooks };
+ * @param { books };
+ * @param { BookList };
  * 
 */
 
@@ -77,8 +77,8 @@ genreInput.addEventListener('keydown', function(event) {
 
 
 /***
- * @param { searchBtn }
- * @param { genre }
+ * @param { searchBtn };
+ * @param { genre };
 */
 
 

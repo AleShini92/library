@@ -1,6 +1,9 @@
 // Function to display a modal with book details
 import axios from 'axios';
 
+// import function delete prefer book
+import { deleteBook } from './book';
+
 export const showBookModal = async function(bookKey) {
 
     let containerCards = document.querySelector('.container__cards');
@@ -15,6 +18,8 @@ export const showBookModal = async function(bookKey) {
         const modal = document.createElement('div');
         modal.id = 'bookModal';
         modal.className = 'modal';
+
+        //create modal description
         modal.innerHTML = `
         <div class='modal__content'>
             <span class='close__button'>&times;</span>
@@ -39,6 +44,11 @@ export const showBookModal = async function(bookKey) {
         // Close the modal when clicking on the close button
         const closeButton = document.querySelector('.close__button');
         
+        /**
+         * @function;
+         * @param closeButton;
+         * @description close modal div to click closeButton
+         */
         closeButton.addEventListener('click', function() {
             console.log('close button');
             modal.remove(); // Remove the modal from the DOM
@@ -69,14 +79,38 @@ export const showBookModal = async function(bookKey) {
             let list = document.querySelector('.list');
             let bookTitle = bookDetails?.title || 'Titolo Sconosciuto'; // `bookDetails` is defined
             list.innerHTML += `
-                <div class="flex">
-                    <p class='my__list-book mt-20'> • ${bookTitle} </p>
+                <div class='my__list-book mt-20 d-flex space-between px-2'>
+                    <p> • ${bookTitle} </p>
+                    <p class="clear w-20">
+                        <?xml version="1.0" encoding="utf-8"?>
+                    <svg class="pointer" version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	                    viewBox="0 0 448 512" style="enable-background:new 0 0 448 512;" xml:space="preserve">
+                        <style type="text/css">
+	                    .st0{fill:#758AA9;}
+                        path:hover {
+                        fill: #EC745A;
+                        }
+                        </style>
+                        <path class="st0" d="M32,128l21.2,339c1.6,25.3,22.6,45,47.9,45h245.8c25.3,0,46.3-19.7,47.9-45L416,128H32z M170.6,474.4
+	                    c0,7.4-6,13.5-13.5,13.5s-13.5-6-13.5-13.5v-249c0-7.5,6-13.5,13.5-13.5c3.8,0,7.1,1.5,9.6,3.9c2.4,2.4,3.9,5.8,3.9,9.6V474.4z
+	                    M237.1,474.4c0,7.4-6,13.5-13.5,13.5s-13.5-6-13.5-13.5v-249c0-7.5,6-13.5,13.5-13.5c3.8,0,7.1,1.5,9.6,3.9
+	                    c2.4,2.4,3.9,5.8,3.9,9.6V474.4z M303.6,474.4c0,7.4-6.1,13.5-13.5,13.5c-7.5,0-13.5-6-13.5-13.5v-249c0-7.5,6-13.5,13.5-13.5
+	                    c3.8,0,7.1,1.5,9.6,3.9c2.4,2.4,3.9,5.8,3.9,9.6V474.4z M416,32h-96l-7.2-14.3C307.4,6.8,296.3,0,284.2,0H163.8
+	                    c-12.1,0-23.2,6.8-28.6,17.7L128,32H32C14.3,32,0,46.3,0,64s14.3,32,32,32h384c17.7,0,32-14.3,32-32S433.7,32,416,32z"/>
+                    </svg>
+                    </p>
                 </div>
             `;
+            /**
+             * @callback function from book.js
+             * 
+             */
+            deleteBook();
+
         });
 
         /**
-         * @function
+         * @function;
          * @param { heart };
          * Change heart's color and save on the localStorage
          */
