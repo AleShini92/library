@@ -39,6 +39,11 @@ nav {
     }
 }
 
-.my__list-book svg {
-    width: 20px;
+.my__list-book {
+    svg {
+        width: 20px;
+        :hover {
+            fill: red;
+        }
+    }
 }
