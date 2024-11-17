@@ -24,6 +24,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   background: var(--text);
+  background-image: url("../img/bg_library.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
 }
 
 html {

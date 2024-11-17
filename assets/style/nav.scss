@@ -6,12 +6,6 @@ nav {
     figure {
         width: 200px;
     }
-
-    figure.book svg {
-        :hover {
-            fill: c.$primary;
-        }    
-    }
 }
 
 .book {
@@ -43,4 +37,8 @@ nav {
         bottom: 10px;
         right: 20px;
     }
+}
+
+.my__list-book svg {
+    width: 20px;
 }

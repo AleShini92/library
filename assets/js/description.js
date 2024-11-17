@@ -87,9 +87,7 @@ export const showBookModal = async function(bookKey) {
 	                    viewBox="0 0 448 512" style="enable-background:new 0 0 448 512;" xml:space="preserve">
                         <style type="text/css">
 	                    .st0{fill:#758AA9;}
-                        path:hover {
-                        fill: #EC745A;
-                        }
+                        path:hover {fill: #EC745A;}
                         </style>
                         <path class="st0" d="M32,128l21.2,339c1.6,25.3,22.6,45,47.9,45h245.8c25.3,0,46.3-19.7,47.9-45L416,128H32z M170.6,474.4
 	                    c0,7.4-6,13.5-13.5,13.5s-13.5-6-13.5-13.5v-249c0-7.5,6-13.5,13.5-13.5c3.8,0,7.1,1.5,9.6,3.9c2.4,2.4,3.9,5.8,3.9,9.6V474.4z
