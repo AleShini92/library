@@ -26,7 +26,7 @@
 
 > ## **Description**
 
-• created an application with a API that call a external server <span color="violet">"open library"</span> 
+• "library" is a website that has the function of searching for books based on their genre using a search bar, the "search" button starts an API call to the external "open library" server and the response to the call will display the books based on your choice by creating cards with images and book title.
 
 > ## **Project**
 
@@ -53,7 +53,7 @@
 
 <!-- LINK IN DESCRIPTION -->
 
-#### **Link Online in description**
+#### **Link Online in description** 👇
 
 `</>` [Link Online](https://mylibraryapi.netlify.app) <--- Click Here to visit the page online.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
