@@ -37,6 +37,7 @@
 - [x] javascript
 - [x] scss
 - [x] webpack
+- [x] Axios
 
 <!-- GETTING STARTED -->
 > ## **Getting started**
