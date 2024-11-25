@@ -1,5 +1,6 @@
 let book = document.querySelector('.book');
 let containerBook = document.querySelector('.container__book');
+let deleteButtons;
 
 /**
  * 
@@ -13,13 +14,13 @@ book.addEventListener('click', () => {
 
 
 /**
- * @function deleteBook(button);
+ * @function deleteBook();
  * @class .clear;
  * @event click;
  * @description this function need to delete a name book to prefer list when you click to tag p;
  */
 export function deleteBook() {
-    const deleteButtons = document.querySelectorAll('.clear');
+    deleteButtons = document.querySelectorAll('.clear');
     deleteButtons.forEach(button => {
         button.addEventListener('click', function() {
             const bookItem = button.closest('.my__list-book'); // Find parent div

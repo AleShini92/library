@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { showBookModal } from './description';
+import { handleKeyDown } from './handleKeyDown';
 /***
  *
  * @async function;
@@ -21,7 +22,6 @@ const getBooks = async function(genre) {
             const searchGenreTitle = `${genre[0].toUpperCase()}${genre.slice(1)}`;
             document.querySelector('#resultTitle').innerText = `Books in the '${searchGenreTitle}' genre:`;
             document.querySelector('.container__cards').style.backgroundColor = 'hsl(214 23% 50% / 1)';
-
             document.querySelector('.loader').style.opacity = '0';
             
             // Clear previous results
@@ -59,22 +59,15 @@ const getBooks = async function(genre) {
     }
 };
 
-
 const genreInput = document.querySelector('#genre');
 const listBook = document.querySelector('.list__book');
 
-// Add event 'keydown' for 'Enter'
-genreInput.addEventListener('keydown', function(event) {
-    if (event.key === 'Enter') {
-        const genre = genreInput.value.trim().toLowerCase();  // take the input value and delete the space
-        listBook.style.display = 'none';
-        if (genre) {
-            getBooks(genre);  // start the function getBooks with the genre
-            listBook.innerHTML = ''
-        }
-    }
-});
-
+/**
+ * 
+ * @callback handleKeyDown()
+ * @description function keydown 
+ */
+handleKeyDown(genreInput, listBook, getBooks);
 
 /***
  * @param { searchBtn };
