@@ -4,10 +4,6 @@
   edge_functions = "netlify/edge-functions"
   environment = { CI = "true" }  # Forza modalità CI per build più dettagliate
 
-[[plugins]]
-  [plugins.inputs]
-  disabled = true
-
 [context.production.environment]
   NODE_ENV = "development"
 
