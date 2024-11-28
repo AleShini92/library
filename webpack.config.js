@@ -1,51 +1,48 @@
 const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');  // Importa il plugin
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  devtool: 'source-map',  // Ottimizzato per produzione
-  entry: {
-    main: './src/index.js',
+  entry: './src/index.js',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
+    publicPath: '/',
   },
-  mode: 'production',  // Modalità di produzione per ottimizzare la build
-  
   module: {
     rules: [
       {
+        test: /\.js$/,
         exclude: /node_modules/,
-        test: /\.jsx?$/,
-        use: [
-          {
-            loader: 'babel-loader'
-          }
-        ]
-      },
-      {
-        test: /\.s[ac]ss$/i,
-        use: [
-          MiniCssExtractPlugin.loader,  // Usa il plugin per estrarre il CSS
-          'css-loader',                  // Carica il CSS
-          'sass-loader'                  // Compila SCSS in CSS
-        ]
+        use: 'babel-loader',
       },
       {
         test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+      },
+      {
+        test: /\.scss$/,
         use: [
-          MiniCssExtractPlugin.loader,  // Usa il plugin per estrarre il CSS
-          'css-loader'
-        ]
-      }
-    ]
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader',
+        ],
+      },
+    ],
   },
-  
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name].bundle.js',
-    publicPath: '/dist',  // Dove sono serviti gli asset nel browser
-  },
-
   plugins: [
+    new HtmlWebpackPlugin({
+      template: '/index.html',
+    }),
     new MiniCssExtractPlugin({
-      filename: '[name].css', // Nome del file CSS estratto
-    })
-  ]
+      filename: 'styles.css',
+    }),
+  ],
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
+  optimization: {
+    minimize: false,  // Disabilita la minificazione
+    splitChunks: false,  // Disabilita lo split dei chunk
+  }  
 };
