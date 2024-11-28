@@ -5,7 +5,7 @@
   environment = { CI = "true" }  # Forza modalità CI per build più dettagliate
 
 [[plugins]]
-  package = "@netlify/plugin-image-optimization"
+  # package = "@netlify/plugin-image-optimization"
   [plugins.inputs]
   disabled = true
 
