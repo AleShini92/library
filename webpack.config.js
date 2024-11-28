@@ -1,11 +1,11 @@
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');  // Importa il plugin
 
 module.exports = {
   devtool: 'source-map',  // Ottimizzato per produzione
   entry: {
     main: './src/index.js',
   },
-  
   mode: 'production',  // Modalità di produzione per ottimizzare la build
   
   module: {
@@ -22,21 +22,17 @@ module.exports = {
       {
         test: /\.s[ac]ss$/i,
         use: [
-          {
-            loader: 'style-loader'
-          },
-          {
-            loader: 'css-loader'
-          },
-          {
-            loader: 'sass-loader'
-          }
+          MiniCssExtractPlugin.loader,  // Usa il plugin per estrarre il CSS
+          'css-loader',                  // Carica il CSS
+          'sass-loader'                  // Compila SCSS in CSS
         ]
       },
-      // Aggiungi eventualmente una regola per i file .css se necessario
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: [
+          MiniCssExtractPlugin.loader,  // Usa il plugin per estrarre il CSS
+          'css-loader'
+        ]
       }
     ]
   },
@@ -44,6 +40,12 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',
-    publicPath: '/static/',
+    publicPath: '/static/',  // Dove sono serviti gli asset nel browser
   },
+
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: '[name].css', // Nome del file CSS estratto
+    })
+  ]
 };
