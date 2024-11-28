@@ -5,6 +5,7 @@ logs
 *.log
 *.css
 package-lock.json
+dist
 
 .vscode/*
 !.vscode/extensions.json

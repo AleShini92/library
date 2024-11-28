@@ -15,7 +15,7 @@ export function preferBook(bookDetails) {
         // initial color heart
         heart.style.fill = localStorage.getItem('heartColor') || defaultColor;
 
-        // added event click on the hert
+        // added event click on the heart
         heart.addEventListener('click', () => {
             // change the heart's color and save it in localStorage
             changeColor();
