@@ -6,7 +6,7 @@
   edge_functions = "netlify/edge-functions"
 
 [context.production.environment]
-  NODE_ENV = "production"
+  NODE_ENV = "development"
 
 [context.deploy-preview.environment]
   NODE_ENV = "development"
