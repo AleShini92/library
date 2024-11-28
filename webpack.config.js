@@ -40,7 +40,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',
-    publicPath: 'library',  // Dove sono serviti gli asset nel browser
+    publicPath: '/assets/',  // Dove sono serviti gli asset nel browser
   },
 
   plugins: [
