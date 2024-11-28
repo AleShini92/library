@@ -7,3 +7,9 @@
   package = "@netlify/plugin-image-optimization"
   [plugins.inputs]
   disabled = true
+
+[context.production.environment]
+  NODE_ENV = "development"
+
+[context.deploy-preview.environment]
+  NODE_ENV = "development"
