@@ -2,6 +2,7 @@
   publish = "dist"
   command = "npm run build"
   edge_functions = "netlify/edge-functions"
+  environment = { CI = "true" }  # Forza modalità CI per build più dettagliate
 
 [[plugins]]
   package = "@netlify/plugin-image-optimization"
