@@ -1,13 +1,9 @@
 [build]
-  command = "npm run build"
   publish = "dist"
-
-  functions = "netlify/functions"
+  command = "npm run build"
   edge_functions = "netlify/edge-functions"
 
-[context.production.environment]
-  NODE_ENV = "development"
-
-[context.deploy-preview.environment]
-  NODE_ENV = "development"
-
+[[plugins]]
+  package = "@netlify/plugin-image-optimization"
+  [plugins.inputs]
+  disabled = true
