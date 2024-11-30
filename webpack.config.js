@@ -7,8 +7,9 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: '/',
+    publicPath: '',
   },
+  mode: 'development', // Impostalo su 'production' per la produzione
   module: {
     rules: [
       {
@@ -18,12 +19,19 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        use: [
+          process.env.NODE_ENV === 'development' 
+            ? 'style-loader' 
+            : MiniCssExtractPlugin.loader, 
+          'css-loader',
+        ],
       },
       {
         test: /\.scss$/,
         use: [
-          MiniCssExtractPlugin.loader,
+          process.env.NODE_ENV === 'development' 
+            ? 'style-loader' 
+            : MiniCssExtractPlugin.loader, 
           'css-loader',
           'sass-loader',
         ],
@@ -32,17 +40,22 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: '/index.html',
+      template: 'index.html', // Il template HTML
+      inject: true, // Inietta automaticamente JS e CSS
     }),
     new MiniCssExtractPlugin({
-      filename: 'styles.css',
+      filename: 'style.css', // Nome del file CSS estratto
     }),
   ],
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.scss'],
   },
   optimization: {
-    minimize: false,  // Disabilita la minificazione
-    splitChunks: false,  // Disabilita lo split dei chunk
-  }  
+    minimize: false, // Disabilita la minificazione
+    splitChunks: false, // Disabilita lo split dei chunk
+  },
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    hot: true, // Abilita l'Hot Module Replacement
+  },
 };

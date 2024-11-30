@@ -1,4 +1,4 @@
-import "../assets/style/style.scss";
+import '../assets/style/style.scss';
 
 //import js api
 import { api } from "../assets/js/callApi.js";
